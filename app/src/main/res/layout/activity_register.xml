@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -23,7 +24,7 @@
             android:src="@drawable/ic_gym_logo"
             android:contentDescription="@string/cd_logo_app" />
 
-        <!-- Título y Subtítulo -->
+        <!-- Titulo y subtitulo de la pantalla -->
         <TextView
             android:id="@+id/txtTituloRegistro"
             style="@style/EstiloTituloPantalla"
@@ -43,7 +44,7 @@
             android:textSize="14sp"
             android:textAlignment="center" />
 
-        <!-- Tarjeta del Formulario de Registro -->
+        <!-- Tarjeta que contiene el formulario -->
         <com.google.android.material.card.MaterialCardView
             style="@style/EstiloTarjetaGym"
             android:layout_width="match_parent"
@@ -56,19 +57,20 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- Campo Nombre Completo -->
+                <!-- Campo para el nombre -->
                 <TextView
                     android:id="@+id/txtEtiquetaNombre"
                     style="@style/EstiloEtiquetaCampo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="6dp"
                     android:text="@string/etiqueta_nombre" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="14dp"
+                    android:hint="@string/hint_nombre"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
@@ -78,25 +80,25 @@
                         android:id="@+id/edtNombre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hint_nombre"
                         android:inputType="textPersonName"
                         android:textColor="@color/texto_primario"
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Campo Correo Electrónico -->
+                <!-- Campo para el correo -->
                 <TextView
                     android:id="@+id/txtEtiquetaCorreoRegistro"
                     style="@style/EstiloEtiquetaCampo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="6dp"
                     android:text="@string/etiqueta_correo" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="14dp"
+                    android:hint="@string/hint_correo"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
@@ -106,99 +108,41 @@
                         android:id="@+id/edtCorreoRegistro"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hint_correo"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/texto_primario"
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Campo Teléfono de Contacto (Inventado) -->
+                <!-- Campo para la contrasena -->
                 <TextView
-                    android:id="@+id/txtEtiquetaTelefono"
+                    android:id="@+id/txtEtiquetaPasswordRegistro"
                     style="@style/EstiloEtiquetaCampo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="@string/etiqueta_telefono" />
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/etiqueta_password" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
+                    android:layout_marginBottom="18dp"
+                    android:hint="@string/hint_password"
+                    app:passwordToggleEnabled="true"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtTelefono"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hint_telefono"
-                        android:inputType="phone"
-                        android:textColor="@color/texto_primario"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <!-- Campo Contraseña -->
-                <TextView
-                    android:id="@+id/txtEtiquetaPasswordRegistro"
-                    style="@style/EstiloEtiquetaCampo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="@string/etiqueta_password" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp"
-                    app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp"
-                    app:passwordToggleEnabled="true">
-
-                    <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtPasswordRegistro"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/hint_password"
                         android:inputType="textPassword"
                         android:textColor="@color/texto_primario"
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Campo Repetir Contraseña (Requisito Rúbrica ES1) -->
-                <TextView
-                    android:id="@+id/txtEtiquetaRepetirPassword"
-                    style="@style/EstiloEtiquetaCampo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="@string/etiqueta_repetir_password" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="18dp"
-                    app:boxCornerRadiusBottomEnd="10dp"
-                    app:boxCornerRadiusBottomStart="10dp"
-                    app:boxCornerRadiusTopEnd="10dp"
-                    app:boxCornerRadiusTopStart="10dp"
-                    app:passwordToggleEnabled="true">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtConfirmarPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/hint_repetir_password"
-                        android:inputType="textPassword"
-                        android:textColor="@color/texto_primario"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <!-- Pregunta de la app en RadioGroup (Requisito Rúbrica ES1) -->
+                <!-- RadioGroup: solo se puede marcar una opcion a la vez -->
                 <TextView
                     android:id="@+id/txtPreguntaNivel"
                     style="@style/EstiloEtiquetaCampo"
@@ -211,7 +155,7 @@
                     android:id="@+id/rgNivelEntrenamiento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="18dp">
 
                     <RadioButton
                         android:id="@+id/rbPrincipiante"
@@ -239,17 +183,41 @@
                         android:textSize="14sp" />
                 </RadioGroup>
 
-                <!-- Casilla de Términos y Condiciones (Requisito Rúbrica ES1) -->
+                <!-- CheckBox: aqui si se pueden marcar varias opciones -->
+                <TextView
+                    android:id="@+id/txtPreguntaEnfoque"
+                    style="@style/EstiloEtiquetaCampo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/pregunta_enfoque" />
+
                 <CheckBox
-                    android:id="@+id/cbTerminos"
+                    android:id="@+id/cbFuerza"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cb_fuerza"
+                    android:textColor="@color/texto_primario"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/cbDefinicion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cb_definicion"
+                    android:textColor="@color/texto_primario"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/cbSalud"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:text="@string/terminos_y_condiciones"
-                    android:textColor="@color/texto_secundario"
-                    android:textSize="13sp" />
+                    android:text="@string/cb_salud"
+                    android:textColor="@color/texto_primario"
+                    android:textSize="14sp" />
 
-                <!-- Botón de Registro -->
+                <!-- Boton para crear la cuenta -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnRegistrar"
                     style="@style/EstiloBotonGym"
@@ -260,7 +228,7 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Botón para regresar a Login -->
+        <!-- Boton para regresar al login -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnVolverLogin"
             style="@style/Widget.Material3.Button.TextButton"

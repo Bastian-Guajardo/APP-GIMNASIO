@@ -18,13 +18,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Inicialización de vistas con prefijos según rúbrica
+        // Enlazamos las vistas del layout
         edtCorreo = findViewById(R.id.edtCorreo)
         edtPassword = findViewById(R.id.edtPassword)
         btnIngresar = findViewById(R.id.btnIngresar)
         btnIrRegistro = findViewById(R.id.btnIrRegistro)
 
-        // Navegación hacia la lista de rutinas
+        // Al tocar Ingresar revisamos que los campos no esten vacios
         btnIngresar.setOnClickListener {
             val correo = edtCorreo.text.toString().trim()
             val password = edtPassword.text.toString().trim()
@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // Navegación hacia el formulario de registro
+        // Lleva a la pantalla de registro
         btnIrRegistro.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)

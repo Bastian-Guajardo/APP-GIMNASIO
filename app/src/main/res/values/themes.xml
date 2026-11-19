@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Tema Base Material 3 (Modo Claro) -->
+    <!-- Tema de la app en modo claro -->
     <style name="Theme.MiGYM" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Colores Primarios y Secundarios Propios (Requisito Rúbrica ES1) -->
+        <!-- Colores que usa el tema -->
         <item name="colorPrimary">@color/primario</item>
         <item name="colorPrimaryDark">@color/primario_oscuro</item>
         <item name="colorSecondary">@color/secundario</item>
@@ -11,9 +11,9 @@
         <item name="android:windowBackground">@color/fondo_pantalla</item>
     </style>
 
-    <!-- ESTILOS PROPIOS USADOS EN DOS O MÁS PANTALLAS (Requisito Rúbrica ES1) -->
+    <!-- Estilos propios, para no repetir los mismos atributos en cada pantalla -->
     
-    <!-- 1. Estilo para Tarjetas de Información y Rutinas (Usado en Lista, Detalle e IA) -->
+    <!-- Estilo de las tarjetas -->
     <style name="EstiloTarjetaGym" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">3dp</item>
@@ -22,7 +22,7 @@
         <item name="strokeWidth">1dp</item>
     </style>
 
-    <!-- 2. Estilo para Botones Principales de la App (Usado en Login, Registro, Agregar, etc.) -->
+    <!-- Estilo de los botones principales -->
     <style name="EstiloBotonGym" parent="Widget.Material3.Button">
         <item name="cornerRadius">12dp</item>
         <item name="android:textSize">16sp</item>
@@ -32,14 +32,14 @@
         <item name="android:minHeight">50dp</item>
     </style>
 
-    <!-- 3. Estilo para Títulos Principales de Pantalla (Usado en las 6 pantallas) -->
+    <!-- Estilo de los titulos de cada pantalla -->
     <style name="EstiloTituloPantalla">
         <item name="android:textSize">22sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/primario</item>
     </style>
 
-    <!-- 4. Estilo para Etiquetas de Campos de Formulario (Usado en Login, Registro, Agregar) -->
+    <!-- Estilo de las etiquetas de los formularios -->
     <style name="EstiloEtiquetaCampo">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>

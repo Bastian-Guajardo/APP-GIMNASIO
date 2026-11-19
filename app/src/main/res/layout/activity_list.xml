@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/fondo_pantalla">
 
-    <!-- Barra Superior con Título y Botones (Requisito Rúbrica ES1) -->
+    <!-- Barra de arriba: logo, titulo y boton del asistente -->
     <LinearLayout
         android:id="@+id/layoutBarraSuperior"
         android:layout_width="match_parent"
@@ -24,302 +24,62 @@
             android:src="@drawable/ic_gym_logo"
             android:contentDescription="@string/cd_logo_app" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/txtTituloLista"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="12dp"
-            android:orientation="vertical">
+            android:text="@string/titulo_lista_rutinas"
+            android:textColor="@color/texto_primario"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/txtTituloLista"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/titulo_lista_rutinas"
-                android:textColor="@color/texto_primario"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtSubtituloLista"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/subtitulo_lista_rutinas"
-                android:textColor="@color/texto_secundario"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <!-- Botón Asistente IA en la Barra -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAbrirIA"
-            style="@style/Widget.Material3.Button.TonalButton"
+            style="@style/EstiloBotonGym"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_abrir_ia"
             android:textSize="12sp" />
     </LinearLayout>
 
-    <!-- ScrollView que contiene al menos 3 filas de ejemplo (Requisito Rúbrica ES1) -->
+    <!-- Mensaje que se ve solo cuando la lista esta vacia -->
+    <TextView
+        android:id="@+id/txtListaVacia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"
+        android:text="@string/mensaje_lista_vacia"
+        android:textAlignment="center"
+        android:textColor="@color/texto_secundario"
+        android:textSize="15sp" />
+
+    <!-- ScrollView: deja desplazar la lista cuando no cabe en la pantalla -->
     <ScrollView
         android:id="@+id/scrollViewRutinas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:layout_weight="1">
 
+        <!-- Este LinearLayout parte vacio. Kotlin le agrega una fila por ejercicio guardado -->
         <LinearLayout
+            android:id="@+id/layoutMisEjercicios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Fila 1 de Ejemplo -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardRutina1"
-                style="@style/EstiloTarjetaGym"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:id="@+id/imgRutina1"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_fitness_routine"
-                            android:contentDescription="@string/cd_icono_rutina" />
-
-                        <TextView
-                            android:id="@+id/txtNombreRutina1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="12dp"
-                            android:text="@string/rutina1_nombre"
-                            android:textColor="@color/texto_primario"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/txtMusculosRutina1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/rutina1_musculos"
-                        android:textColor="@color/primario"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/txtInfoRutina1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/rutina1_info"
-                        android:textColor="@color/texto_secundario"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/txtNivelRutina1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="12dp"
-                        android:text="@string/rutina1_nivel"
-                        android:textColor="@color/texto_secundario"
-                        android:textSize="13sp"
-                        android:textStyle="italic" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnVerDetalle1"
-                        style="@style/EstiloBotonGym"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/btn_ver_detalle" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Fila 2 de Ejemplo -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardRutina2"
-                style="@style/EstiloTarjetaGym"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:id="@+id/imgRutina2"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_fitness_routine"
-                            android:contentDescription="@string/cd_icono_rutina" />
-
-                        <TextView
-                            android:id="@+id/txtNombreRutina2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="12dp"
-                            android:text="@string/rutina2_nombre"
-                            android:textColor="@color/texto_primario"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/txtMusculosRutina2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/rutina2_musculos"
-                        android:textColor="@color/primario"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/txtInfoRutina2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/rutina2_info"
-                        android:textColor="@color/texto_secundario"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/txtNivelRutina2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="12dp"
-                        android:text="@string/rutina2_nivel"
-                        android:textColor="@color/texto_secundario"
-                        android:textSize="13sp"
-                        android:textStyle="italic" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnVerDetalle2"
-                        style="@style/EstiloBotonGym"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/btn_ver_detalle" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Fila 3 de Ejemplo -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardRutina3"
-                style="@style/EstiloTarjetaGym"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:id="@+id/imgRutina3"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:src="@drawable/ic_fitness_routine"
-                            android:contentDescription="@string/cd_icono_rutina" />
-
-                        <TextView
-                            android:id="@+id/txtNombreRutina3"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="12dp"
-                            android:text="@string/rutina3_nombre"
-                            android:textColor="@color/texto_primario"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/txtMusculosRutina3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/rutina3_musculos"
-                        android:textColor="@color/primario"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/txtInfoRutina3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/rutina3_info"
-                        android:textColor="@color/texto_secundario"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/txtNivelRutina3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="12dp"
-                        android:text="@string/rutina3_nivel"
-                        android:textColor="@color/texto_secundario"
-                        android:textSize="13sp"
-                        android:textStyle="italic" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnVerDetalle3"
-                        style="@style/EstiloBotonGym"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/btn_ver_detalle" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
+            android:padding="16dp" />
     </ScrollView>
 
-    <!-- Barra Inferior de Acciones con Botón para Agregar Rutina -->
+    <!-- Barra de abajo con los dos botones -->
     <LinearLayout
         android:id="@+id/layoutBarraInferior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/fondo_tarjeta"
-        android:elevation="6dp"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:gravity="center">
+        android:padding="12dp">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNuevaRutina"
@@ -336,8 +96,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_cerrar_sesion"
-            android:textColor="@color/texto_secundario"
-            android:textSize="12sp" />
+            android:textColor="@color/primario"
+            android:textSize="13sp" />
     </LinearLayout>
 
 </LinearLayout>

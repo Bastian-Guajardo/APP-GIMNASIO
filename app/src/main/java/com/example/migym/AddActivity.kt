@@ -1,48 +1,79 @@
 package com.example.migym
 
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.Button
-import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class AddActivity : AppCompatActivity() {
 
-    private lateinit var edtNombreRutina: EditText
-    private lateinit var edtGrupoMuscular: EditText
-    private lateinit var edtDuracionMinutos: EditText
-    private lateinit var edtDiasSemana: EditText
-    private lateinit var edtSeriesRepeticiones: EditText
-    private lateinit var edtDescripcion: EditText
-    private lateinit var btnGuardarRutina: Button
-    private lateinit var btnCancelarRutina: Button
+    private lateinit var spnGrupoMuscular: Spinner
+    private lateinit var layoutEjercicios: LinearLayout
+    private lateinit var btnVolverDeAgregar: Button
+
+    // Los ejercicios de cada grupo, en el mismo orden que el Spinner
+    private val arreglosPorGrupo = intArrayOf(
+        R.array.ejercicios_pecho,
+        R.array.ejercicios_espalda,
+        R.array.ejercicios_piernas,
+        R.array.ejercicios_brazos,
+        R.array.ejercicios_abdomen
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
-        edtNombreRutina = findViewById(R.id.edtNombreRutina)
-        edtGrupoMuscular = findViewById(R.id.edtGrupoMuscular)
-        edtDuracionMinutos = findViewById(R.id.edtDuracionMinutos)
-        edtDiasSemana = findViewById(R.id.edtDiasSemana)
-        edtSeriesRepeticiones = findViewById(R.id.edtSeriesRepeticiones)
-        edtDescripcion = findViewById(R.id.edtDescripcion)
-        btnGuardarRutina = findViewById(R.id.btnGuardarRutina)
-        btnCancelarRutina = findViewById(R.id.btnCancelarRutina)
+        // Enlazamos las vistas del layout
+        spnGrupoMuscular = findViewById(R.id.spnGrupoMuscular)
+        layoutEjercicios = findViewById(R.id.layoutEjercicios)
+        btnVolverDeAgregar = findViewById(R.id.btnVolverDeAgregar)
 
-        btnGuardarRutina.setOnClickListener {
-            val nombre = edtNombreRutina.text.toString().trim()
-            if (nombre.isEmpty()) {
-                Toast.makeText(this, "Por favor ingrese el nombre de la rutina", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+        // Cuando se elige un grupo en el Spinner, mostramos los ejercicios de ese grupo
+        spnGrupoMuscular.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(padre: AdapterView<*>?, vista: View?, posicion: Int, id: Long) {
+                mostrarEjercicios(posicion)
             }
 
-            Toast.makeText(this, getString(R.string.msg_rutina_guardada), Toast.LENGTH_SHORT).show()
-            finish()
+            override fun onNothingSelected(padre: AdapterView<*>?) {
+            }
         }
 
-        btnCancelarRutina.setOnClickListener {
+        btnVolverDeAgregar.setOnClickListener {
             finish()
+        }
+    }
+
+    // Arma la lista de ejercicios del grupo elegido
+    private fun mostrarEjercicios(posicionGrupo: Int) {
+        val ejercicios = resources.getStringArray(arreglosPorGrupo[posicionGrupo])
+
+        // Borramos las filas del grupo anterior
+        layoutEjercicios.removeAllViews()
+
+        for (ejercicio in ejercicios) {
+            // Inflamos la fila item_ejercicio.xml y le ponemos el nombre
+            val fila = layoutInflater.inflate(R.layout.item_ejercicio, layoutEjercicios, false)
+            val txtNombre = fila.findViewById<TextView>(R.id.txtNombreEjercicio)
+            val btnAgregar = fila.findViewById<Button>(R.id.btnAccionEjercicio)
+
+            txtNombre.text = ejercicio
+            btnAgregar.text = getString(R.string.btn_mas)
+
+            btnAgregar.setOnClickListener {
+                if (MisEjercicios.agregar(ejercicio)) {
+                    Toast.makeText(this, "Agregado: $ejercicio", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Ese ejercicio ya esta en tu lista", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            layoutEjercicios.addView(fila)
         }
     }
 }

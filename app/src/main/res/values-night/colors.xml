@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Colores para modo oscuro con nombres por función (Requisito Rúbrica ES1) -->
+    <!-- Los mismos colores, pero para cuando el telefono esta en modo oscuro -->
     <color name="primario">#FF7043</color>
     <color name="primario_oscuro">#E64A19</color>
     <color name="primario_claro">#3E2723</color>

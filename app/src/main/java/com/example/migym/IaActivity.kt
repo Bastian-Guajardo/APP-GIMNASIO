@@ -18,7 +18,7 @@ class IaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ia)
 
-        // Componentes según identificadores de la rúbrica (listos para Gemini)
+        // Enlazamos las vistas del layout
         edtPromptIA = findViewById(R.id.edtPromptIA)
         btnPreguntarIA = findViewById(R.id.btnPreguntarIA)
         txtRespuestaIA = findViewById(R.id.txtRespuestaIA)
@@ -32,8 +32,8 @@ class IaActivity : AppCompatActivity() {
             }
 
             Toast.makeText(this, getString(R.string.msg_ia_procesando), Toast.LENGTH_SHORT).show()
-            // Simulación interactiva de respuesta mientras se integra el SDK de Gemini en Unidad 3
-            txtRespuestaIA.text = "¡Excelente consulta! Para optimizar: \"$consulta\", te sugiero mantener series efectivas cerca del RIR 1-2, hidratación con electrolitos y un superávit o déficit calórico controlado según tu objetivo."
+            // Por ahora la respuesta es de ejemplo, todavia no se conecta a internet
+            txtRespuestaIA.text = "Tu consulta fue: \"$consulta\". Te recomiendo entrenar con constancia, descansar bien entre series y tomar suficiente agua durante el entrenamiento."
         }
 
         btnVolverDeIA.setOnClickListener {

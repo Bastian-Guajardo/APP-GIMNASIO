@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Colores con nombres por función (Requisito Rúbrica ES1) -->
+    <!-- Colores principales de la app. Se usan con @color/nombre -->
     <color name="primario">#E64A19</color>
     <color name="primario_oscuro">#BF360C</color>
     <color name="primario_claro">#FFCCBC</color>

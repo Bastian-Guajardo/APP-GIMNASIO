@@ -1,210 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
+    android:orientation="vertical"
     android:background="@color/fondo_pantalla">
 
+    <!-- Este contenedor lleva el padding, porque fitsSystemWindows lo pisa en la raiz -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Encabezado con título -->
+    <!-- Titulo de la pantalla -->
+    <TextView
+        android:id="@+id/txtTituloDetalle"
+        style="@style/EstiloTituloPantalla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/titulo_detalle" />
+
+    <!-- Tarjeta con los datos del ejercicio -->
+    <com.google.android.material.card.MaterialCardView
+        style="@style/EstiloTarjetaGym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp">
+            android:orientation="vertical"
+            android:padding="18dp">
 
-            <ImageView
-                android:id="@+id/imgIconoDetalle"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/ic_fitness_routine"
-                android:contentDescription="@string/cd_icono_rutina" />
+            <!-- Aqui Kotlin escribe el nombre del ejercicio que llego por el Intent -->
+            <TextView
+                android:id="@+id/txtDetalleNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:textColor="@color/texto_primario"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtTituloDetalle"
-                style="@style/EstiloTituloPantalla"
+                android:id="@+id/txtEtiquetaSeries"
+                style="@style/EstiloEtiquetaCampo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:text="@string/titulo_detalle" />
+                android:text="@string/detalle_etiqueta_series" />
+
+            <TextView
+                android:id="@+id/txtDetalleSeries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/detalle_series"
+                android:textColor="@color/texto_primario"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtEtiquetaDetalleDescanso"
+                style="@style/EstiloEtiquetaCampo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detalle_etiqueta_descanso" />
+
+            <TextView
+                android:id="@+id/txtDetalleDescanso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/detalle_descanso_ejemplo"
+                android:textColor="@color/texto_primario"
+                android:textSize="15sp" />
+
         </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
-        <!-- Tarjeta con el registro completo (Requisito Rúbrica ES1) -->
-        <com.google.android.material.card.MaterialCardView
-            style="@style/EstiloTarjetaGym"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+    <!-- Boton para sacar el ejercicio de la lista -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnQuitarEjercicio"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/btn_quitar_ejercicio"
+        android:textColor="@color/color_peligro" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <!-- Nombre de la Rutina -->
-                <TextView
-                    android:id="@+id/txtDetalleNombre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/detalle_nombre_ejemplo"
-                    android:textColor="@color/texto_primario"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:background="@color/divisor" />
-
-                <!-- Músculos -->
-                <TextView
-                    android:id="@+id/txtEtiquetaDetalleMusculos"
-                    style="@style/EstiloEtiquetaCampo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/detalle_etiqueta_musculos" />
-
-                <TextView
-                    android:id="@+id/txtDetalleMusculos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="14dp"
-                    android:text="@string/detalle_musculos_ejemplo"
-                    android:textColor="@color/primario"
-                    android:textSize="14sp" />
-
-                <!-- Duración y Días -->
-                <TextView
-                    android:id="@+id/txtEtiquetaDetalleTiempo"
-                    style="@style/EstiloEtiquetaCampo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/detalle_etiqueta_tiempo" />
-
-                <TextView
-                    android:id="@+id/txtDetalleTiempo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="14dp"
-                    android:text="@string/detalle_tiempo_ejemplo"
-                    android:textColor="@color/texto_primario"
-                    android:textSize="14sp" />
-
-                <!-- Ejercicios detallados -->
-                <TextView
-                    android:id="@+id/txtEtiquetaDetalleEjercicios"
-                    style="@style/EstiloEtiquetaCampo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/detalle_etiqueta_ejercicios" />
-
-                <TextView
-                    android:id="@+id/txtDetalleEjercicios"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="14dp"
-                    android:lineSpacingExtra="4dp"
-                    android:text="@string/detalle_ejercicios_ejemplo"
-                    android:textColor="@color/texto_primario"
-                    android:textSize="14sp" />
-
-                <!-- Recuperación / Descanso -->
-                <TextView
-                    android:id="@+id/txtEtiquetaDetalleDescanso"
-                    style="@style/EstiloEtiquetaCampo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/detalle_etiqueta_descanso" />
-
-                <TextView
-                    android:id="@+id/txtDetalleDescanso"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="14dp"
-                    android:text="@string/detalle_descanso_ejemplo"
-                    android:textColor="@color/texto_secundario"
-                    android:textSize="13sp" />
-
-                <!-- Casilla para Marcar como Favorita (Acción Marcar) -->
-                <CheckBox
-                    android:id="@+id/cbMarcarFavorita"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/marcar_favorita"
-                    android:textColor="@color/texto_primario"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- ACCIONES REQUERIDAS POR LA RÚBRICA: Editar, Eliminar o Marcar -->
-        <com.google.android.material.card.MaterialCardView
-            style="@style/EstiloTarjetaGym"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <!-- Acción 1: Marcar como Completada -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnMarcarCompletada"
-                    style="@style/EstiloBotonGym"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/btn_marcar_completada" />
-
-                <!-- Acción 2: Editar Rutina -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnEditarRutina"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/btn_editar_rutina" />
-
-                <!-- Acción 3: Eliminar Rutina -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnEliminarRutina"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btn_eliminar_rutina"
-                    android:textColor="@color/color_peligro"
-                    app:strokeColor="@color/color_peligro" />
-
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Botón Volver a la Lista -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnVolverLista"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/btn_volver_lista"
-            android:textColor="@color/primario" />
+    <!-- Boton para regresar a la lista -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVolverLista"
+        style="@style/EstiloBotonGym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_volver_lista" />
 
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>

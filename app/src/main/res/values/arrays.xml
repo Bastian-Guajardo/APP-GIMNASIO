@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- arrays.xml: listas de textos que ya vienen cargadas en la app -->
+<resources>
+
+    <!-- grupos_musculares: las opciones del Spinner de activity_add.xml -->
+    <string-array name="grupos_musculares">
+        <item>Pecho</item>
+        <item>Espalda</item>
+        <item>Piernas</item>
+        <item>Brazos</item>
+        <item>Abdomen</item>
+    </string-array>
+
+    <!-- Los ejercicios de cada grupo. Se muestran segun lo que se elija en el Spinner -->
+    <string-array name="ejercicios_pecho">
+        <item>Press de banca</item>
+        <item>Press inclinado</item>
+        <item>Aperturas con mancuernas</item>
+        <item>Fondos en paralelas</item>
+    </string-array>
+
+    <string-array name="ejercicios_espalda">
+        <item>Dominadas</item>
+        <item>Remo con barra</item>
+        <item>Jalon al pecho</item>
+        <item>Peso muerto</item>
+    </string-array>
+
+    <string-array name="ejercicios_piernas">
+        <item>Sentadillas</item>
+        <item>Prensa de piernas</item>
+        <item>Zancadas</item>
+        <item>Curl femoral</item>
+    </string-array>
+
+    <string-array name="ejercicios_brazos">
+        <item>Curl con barra</item>
+        <item>Press frances</item>
+        <item>Curl martillo</item>
+        <item>Fondos en banco</item>
+    </string-array>
+
+    <string-array name="ejercicios_abdomen">
+        <item>Plancha</item>
+        <item>Abdominales cortos</item>
+        <item>Elevacion de piernas</item>
+        <item>Giro ruso</item>
+    </string-array>
+
+</resources>

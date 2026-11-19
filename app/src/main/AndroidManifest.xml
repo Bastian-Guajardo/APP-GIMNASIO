@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiGYM">
 
-        <!-- Pantalla 1: Login (Actividad Principal de Inicio) -->
+        <!-- Pantalla 1: Login, es la que se abre al iniciar la app -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -31,38 +31,33 @@
             android:label="@string/titulo_registro"
             android:theme="@style/Theme.MiGYM" />
 
-        <!-- Pantalla 3: Lista de Rutinas -->
+        <!-- Pantalla 3: Lista de ejercicios agregados -->
         <activity
             android:name=".ListActivity"
             android:exported="false"
             android:label="@string/titulo_lista_rutinas"
             android:theme="@style/Theme.MiGYM" />
 
-        <!-- Pantalla 4: Agregar Rutina -->
+        <!-- Pantalla 4: Agregar ejercicios ya cargados -->
         <activity
             android:name=".AddActivity"
             android:exported="false"
             android:label="@string/titulo_agregar"
             android:theme="@style/Theme.MiGYM" />
 
-        <!-- Pantalla 5: Detalle de Rutina -->
+        <!-- Pantalla 5: Detalle del ejercicio -->
         <activity
             android:name=".DetailActivity"
             android:exported="false"
             android:label="@string/titulo_detalle"
             android:theme="@style/Theme.MiGYM" />
 
-        <!-- Pantalla 6: Asistente IA (Gemini) -->
+        <!-- Pantalla 6: Asistente IA -->
         <activity
             android:name=".IaActivity"
             android:exported="false"
             android:label="@string/titulo_ia"
             android:theme="@style/Theme.MiGYM" />
-
-        <!-- Compatibilidad MainActivity opcional -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
 
     </application>
 

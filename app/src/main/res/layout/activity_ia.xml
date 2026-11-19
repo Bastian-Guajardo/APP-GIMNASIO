@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -52,7 +53,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Tarjeta de Entrada: Lo que escribe la persona (Requisito Rúbrica ES1) -->
+        <!-- Tarjeta donde la persona escribe su consulta -->
         <com.google.android.material.card.MaterialCardView
             style="@style/EstiloTarjetaGym"
             android:layout_width="match_parent"
@@ -94,7 +95,7 @@
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Botón que pregunta (Requisito Rúbrica ES1) -->
+                <!-- Botón para enviar la consulta -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnPreguntarIA"
                     style="@style/EstiloBotonGym"
@@ -105,7 +106,7 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Tarjeta del Área de Respuesta con Texto de Ejemplo (Requisito Rúbrica ES1) -->
+        <!-- Tarjeta donde se muestra la respuesta -->
         <com.google.android.material.card.MaterialCardView
             style="@style/EstiloTarjetaGym"
             android:layout_width="match_parent"
@@ -143,7 +144,7 @@
                         android:textColor="@color/primario" />
                 </LinearLayout>
 
-                <!-- Área de respuesta con texto de ejemplo (Requisito Rúbrica ES1) -->
+                <!-- Texto con la respuesta -->
                 <TextView
                     android:id="@+id/txtRespuestaIA"
                     android:layout_width="match_parent"

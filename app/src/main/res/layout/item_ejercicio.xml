@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_ejercicio.xml: una sola fila con el nombre de un ejercicio y un boton.
+    Esta fila se repite por cada ejercicio. Kotlin la infla con LayoutInflater,
+    le pone el nombre y la agrega al LinearLayout de la pantalla.
+-->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/EstiloTarjetaGym"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="14dp">
+
+        <!-- Icono del ejercicio -->
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_fitness_routine"
+            android:contentDescription="@string/cd_icono_rutina" />
+
+        <!-- Nombre del ejercicio. layout_weight=1 hace que ocupe el espacio que sobra -->
+        <TextView
+            android:id="@+id/txtNombreEjercicio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/texto_primario"
+            android:textSize="15sp" />
+
+        <!-- Boton de la fila. El texto se le pone desde Kotlin -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAccionEjercicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="64dp"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
