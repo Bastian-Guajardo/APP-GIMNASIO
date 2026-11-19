@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores para modo oscuro con nombres por función (Requisito Rúbrica ES1) -->
+    <color name="primario">#FF7043</color>
+    <color name="primario_oscuro">#E64A19</color>
+    <color name="primario_claro">#3E2723</color>
+    <color name="secundario">#90A4AE</color>
+    <color name="secundario_claro">#B0BEC5</color>
+    
+    <!-- Fondos y superficies oscuras -->
+    <color name="fondo_pantalla">#121212</color>
+    <color name="fondo_tarjeta">#1E1E1E</color>
+    <color name="fondo_campo">#2A2A2A</color>
+    <color name="fondo_ia">#2D231E</color>
+    
+    <!-- Textos legibles en fondo oscuro -->
+    <color name="texto_primario">#F5F5F5</color>
+    <color name="texto_secundario">#B0B0B0</color>
+    <color name="texto_en_primario">#121212</color>
+    <color name="texto_hint">#757575</color>
+    
+    <!-- Bordes y divisores oscuros -->
+    <color name="borde_tarjeta">#333333</color>
+    <color name="divisor">#292929</color>
+    
+    <!-- Estados y acentos en modo oscuro -->
+    <color name="color_exito">#81C784</color>
+    <color name="color_peligro">#E57373</color>
+    <color name="color_alerta">#FFB74D</color>
+    <color name="color_acento">#FFA726</color>
+</resources>

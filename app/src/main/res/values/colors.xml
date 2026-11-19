@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores con nombres por función (Requisito Rúbrica ES1) -->
+    <color name="primario">#E64A19</color>
+    <color name="primario_oscuro">#BF360C</color>
+    <color name="primario_claro">#FFCCBC</color>
+    <color name="secundario">#263238</color>
+    <color name="secundario_claro">#455A64</color>
+    
+    <!-- Fondos y superficies -->
+    <color name="fondo_pantalla">#F5F7FA</color>
+    <color name="fondo_tarjeta">#FFFFFF</color>
+    <color name="fondo_campo">#FFFFFF</color>
+    <color name="fondo_ia">#FFF3E0</color>
+    
+    <!-- Textos -->
+    <color name="texto_primario">#1C1B1F</color>
+    <color name="texto_secundario">#616161</color>
+    <color name="texto_en_primario">#FFFFFF</color>
+    <color name="texto_hint">#9E9E9E</color>
+    
+    <!-- Bordes y divisores -->
+    <color name="borde_tarjeta">#E0E0E0</color>
+    <color name="divisor">#EEEEEE</color>
+    
+    <!-- Estados y acentos -->
+    <color name="color_exito">#2E7D32</color>
+    <color name="color_peligro">#C62828</color>
+    <color name="color_alerta">#F57C00</color>
+    <color name="color_acento">#FF6F00</color>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Identidad de la App -->
+    <string name="app_name">MiGYM</string>
+    <string name="app_slogan">Tu entrenador y gestor de rutinas</string>
+    
+    <!-- Descripciones de accesibilidad (contentDescription) -->
+    <string name="cd_logo_app">Logotipo oficial de MiGYM</string>
+    <string name="cd_icono_rutina">Ícono de entrenamiento</string>
+    <string name="cd_icono_ia">Ícono del asistente de inteligencia artificial</string>
+    <string name="cd_icono_agregar">Ícono para agregar nueva rutina</string>
+    <string name="cd_icono_volver">Ícono para regresar a la pantalla anterior</string>
+
+    <!-- Pantalla 1: Login -->
+    <string name="titulo_login">Bienvenido a MiGYM</string>
+    <string name="subtitulo_login">Inicia sesión para continuar tu entrenamiento</string>
+    <string name="etiqueta_correo">Correo Electrónico</string>
+    <string name="hint_correo">usuario.gym@ejemplo.com</string>
+    <string name="etiqueta_password">Contraseña</string>
+    <string name="hint_password">••••••••</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="pregunta_sin_cuenta">¿No tienes una cuenta registrada?</string>
+    <string name="btn_ir_registro">Regístrate aquí</string>
+
+    <!-- Pantalla 2: Registro -->
+    <string name="titulo_registro">Crear Cuenta</string>
+    <string name="subtitulo_registro">Únete a MiGYM y gestiona tus entrenamientos</string>
+    <string name="etiqueta_nombre">Nombre Completo</string>
+    <string name="hint_nombre">Ej: Alex Atleta</string>
+    <string name="etiqueta_telefono">Teléfono de Contacto</string>
+    <string name="hint_telefono">+56 9 1234 5678</string>
+    <string name="etiqueta_repetir_password">Confirmar Contraseña</string>
+    <string name="hint_repetir_password">Repite tu contraseña</string>
+    <string name="pregunta_nivel_entrenamiento">¿Cuál es tu nivel de entrenamiento actual?</string>
+    <string name="rb_nivel_principiante">Principiante (0 a 6 meses)</string>
+    <string name="rb_nivel_intermedio">Intermedio (6 meses a 2 años)</string>
+    <string name="rb_nivel_avanzado">Avanzado (+2 años)</string>
+    <string name="terminos_y_condiciones">Acepto los términos del servicio y políticas de salud de MiGYM</string>
+    <string name="btn_registrarse">Crear Mi Cuenta</string>
+    <string name="btn_volver_login">¿Ya tienes cuenta? Inicia sesión</string>
+
+    <!-- Pantalla 3: Lista de Rutinas -->
+    <string name="titulo_lista_rutinas">Mis Rutinas de Gym</string>
+    <string name="subtitulo_lista_rutinas">Selecciona una rutina para ver sus detalles</string>
+    <string name="btn_nueva_rutina">+ Nueva Rutina</string>
+    <string name="btn_abrir_ia">Asistente IA</string>
+    <string name="btn_ver_detalle">Ver Detalle Completo</string>
+    <string name="btn_cerrar_sesion">Cerrar Sesión</string>
+
+    <!-- Filas de ejemplo de la Lista (Datos inventados de fitness) -->
+    <string name="rutina1_nombre">Rutina 1: Hipertrofia Pecho y Tríceps</string>
+    <string name="rutina1_musculos">Músculos: Pecho, Deltoides Anterior, Tríceps</string>
+    <string name="rutina1_info">Duración: 60 min | 5 Ejercicios | Lunes y Jueves</string>
+    <string name="rutina1_nivel">Nivel: Intermedio</string>
+
+    <string name="rutina2_nombre">Rutina 2: Fuerza Espalda y Bíceps</string>
+    <string name="rutina2_musculos">Músculos: Dorsales, Trapecios, Bíceps</string>
+    <string name="rutina2_info">Duración: 55 min | 5 Ejercicios | Martes y Viernes</string>
+    <string name="rutina2_nivel">Nivel: Avanzado</string>
+
+    <string name="rutina3_nombre">Rutina 3: Tren Inferior y Core</string>
+    <string name="rutina3_musculos">Músculos: Cuádriceps, Isquiotibiales, Abdomen</string>
+    <string name="rutina3_info">Duración: 50 min | 6 Ejercicios | Miércoles y Sábado</string>
+    <string name="rutina3_nivel">Nivel: Principiante</string>
+
+    <!-- Pantalla 4: Agregar Rutina -->
+    <string name="titulo_agregar">Agregar Nueva Rutina</string>
+    <string name="subtitulo_agregar">Completa el formulario para registrar un entrenamiento</string>
+    <string name="etiqueta_nombre_rutina">Nombre de la Rutina</string>
+    <string name="hint_nombre_rutina">Ej: Rutina HIIT Quema Grasa</string>
+    <string name="etiqueta_grupo_muscular">Grupo Muscular Principal</string>
+    <string name="hint_grupo_muscular">Ej: Tren Superior, Piernas, Fullbody</string>
+    <string name="etiqueta_duracion">Duración Estimada (minutos)</string>
+    <string name="hint_duracion">Ej: 45</string>
+    <string name="etiqueta_dias">Días de Entrenamiento Sugeridos</string>
+    <string name="hint_dias">Ej: Lunes, Miércoles, Viernes</string>
+    <string name="etiqueta_series_reps">Estructura de Series y Repeticiones</string>
+    <string name="hint_series_reps">Ej: 4 series de 10 a 12 repeticiones</string>
+    <string name="etiqueta_descripcion">Descripción y Ejercicios</string>
+    <string name="hint_descripcion">Detalla los ejercicios principales y notas de descanso...</string>
+    <string name="btn_guardar_rutina">Guardar Rutina</string>
+    <string name="btn_cancelar">Cancelar</string>
+
+    <!-- Pantalla 5: Detalle de Rutina -->
+    <string name="titulo_detalle">Detalle del Entrenamiento</string>
+    <string name="detalle_nombre_ejemplo">Rutina 1: Hipertrofia Pecho y Tríceps</string>
+    <string name="detalle_etiqueta_musculos">Grupos Musculares Enfocados:</string>
+    <string name="detalle_musculos_ejemplo">Pectoral Mayor, Pectoral Menor, Deltoides Anterior y Tríceps Braquial</string>
+    <string name="detalle_etiqueta_tiempo">Duración y Frecuencia:</string>
+    <string name="detalle_tiempo_ejemplo">60 minutos por sesión | Frecuencia: 2 veces por semana (Lunes y Jueves)</string>
+    <string name="detalle_etiqueta_ejercicios">Plan de Ejercicios:</string>
+    <string name="detalle_ejercicios_ejemplo">1. Press de Banca Plano con Barra - 4 series x 8-10 reps\n2. Press Inclinado con Mancuernas - 4 series x 10-12 reps\n3. Cruce en Poleas de Pie - 3 series x 15 reps\n4. Fondos en Paralelas para Pecho - 3 series al fallo\n5. Press Francés con Barra Z - 3 series x 12 reps\n6. Extensión de Tríceps en Polea Alta - 4 series x 15 reps</string>
+    <string name="detalle_etiqueta_descanso">Recomendaciones de Recuperación:</string>
+    <string name="detalle_descanso_ejemplo">Descansar entre 60 y 90 segundos entre series. Hidratarse con al menos 750 ml de agua durante la sesión.</string>
+    <string name="marcar_favorita">Marcar como rutina favorita</string>
+    <string name="btn_marcar_completada">Marcar como Completada</string>
+    <string name="btn_editar_rutina">Editar Rutina</string>
+    <string name="btn_eliminar_rutina">Eliminar Rutina</string>
+    <string name="btn_volver_lista">Volver a la Lista</string>
+
+    <!-- Pantalla 6: Asistente IA (Gemini) -->
+    <string name="titulo_ia">Entrenador Virtual con IA</string>
+    <string name="subtitulo_ia">Consulta recomendaciones y sugerencias nutricionales con Gemini</string>
+    <string name="etiqueta_prompt_ia">¿Qué deseas consultar hoy?</string>
+    <string name="hint_prompt_ia">Ej: ¿Cómo optimizar mi ingesta de proteínas para recuperarme mejor?</string>
+    <string name="btn_preguntar_ia">Consultar con IA</string>
+    <string name="etiqueta_respuesta_ia">Respuesta del Entrenador IA:</string>
+    <string name="respuesta_ia_ejemplo">¡Hola Atleta! Para optimizar tu recuperación muscular post-entrenamiento de fuerza, se sugiere consumir entre 1.6 y 2.2 gramos de proteína por kilogramo de peso corporal al día, distribuidos en 4 tomas de aproximadamente 25-35g cada una. Además, prioriza el descanso nocturno (7-8 horas) ya que es durante la fase de sueño profundo donde ocurre la mayor síntesis proteica muscular.</string>
+    <string name="btn_volver_de_ia">Regresar al Menú</string>
+    
+    <!-- Mensajes informativos / Toast -->
+    <string name="msg_login_exitoso">Sesión iniciada correctamente en MiGYM</string>
+    <string name="msg_registro_exitoso">Cuenta registrada exitosamente en MiGYM</string>
+    <string name="msg_rutina_guardada">Nueva rutina guardada en MiGYM</string>
+    <string name="msg_rutina_completada">¡Rutina marcada como completada! Gran trabajo.</string>
+    <string name="msg_rutina_editada">Modo edición activado</string>
+    <string name="msg_rutina_eliminada">Rutina eliminada de la lista</string>
+    <string name="msg_ia_procesando">Consultando recomendación con el Asistente IA...</string>
+</resources>
