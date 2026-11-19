@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/fondo_pantalla">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Logotipo -->
+        <ImageView
+            android:id="@+id/imgLogoRegistro"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/ic_gym_logo"
+            android:contentDescription="@string/cd_logo_app" />
+
+        <!-- Título y Subtítulo -->
+        <TextView
+            android:id="@+id/txtTituloRegistro"
+            style="@style/EstiloTituloPantalla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_registro"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/txtSubtituloRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/subtitulo_registro"
+            android:textColor="@color/texto_secundario"
+            android:textSize="14sp"
+            android:textAlignment="center" />
+
+        <!-- Tarjeta del Formulario de Registro -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/EstiloTarjetaGym"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Campo Nombre Completo -->
+                <TextView
+                    android:id="@+id/txtEtiquetaNombre"
+                    style="@style/EstiloEtiquetaCampo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/etiqueta_nombre" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_nombre"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Campo Correo Electrónico -->
+                <TextView
+                    android:id="@+id/txtEtiquetaCorreoRegistro"
+                    style="@style/EstiloEtiquetaCampo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/etiqueta_correo" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtCorreoRegistro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_correo"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Campo Teléfono de Contacto (Inventado) -->
+                <TextView
+                    android:id="@+id/txtEtiquetaTelefono"
+                    style="@style/EstiloEtiquetaCampo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/etiqueta_telefono" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtTelefono"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_telefono"
+                        android:inputType="phone"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Campo Contraseña -->
+                <TextView
+                    android:id="@+id/txtEtiquetaPasswordRegistro"
+                    style="@style/EstiloEtiquetaCampo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/etiqueta_password" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtPasswordRegistro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_password"
+                        android:inputType="textPassword"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Campo Repetir Contraseña (Requisito Rúbrica ES1) -->
+                <TextView
+                    android:id="@+id/txtEtiquetaRepetirPassword"
+                    style="@style/EstiloEtiquetaCampo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/etiqueta_repetir_password" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="18dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtConfirmarPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_repetir_password"
+                        android:inputType="textPassword"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Pregunta de la app en RadioGroup (Requisito Rúbrica ES1) -->
+                <TextView
+                    android:id="@+id/txtPreguntaNivel"
+                    style="@style/EstiloEtiquetaCampo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/pregunta_nivel_entrenamiento" />
+
+                <RadioGroup
+                    android:id="@+id/rgNivelEntrenamiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioButton
+                        android:id="@+id/rbPrincipiante"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/rb_nivel_principiante"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbIntermedio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_nivel_intermedio"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbAvanzado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rb_nivel_avanzado"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+                </RadioGroup>
+
+                <!-- Casilla de Términos y Condiciones (Requisito Rúbrica ES1) -->
+                <CheckBox
+                    android:id="@+id/cbTerminos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/terminos_y_condiciones"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="13sp" />
+
+                <!-- Botón de Registro -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegistrar"
+                    style="@style/EstiloBotonGym"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_registrarse" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón para regresar a Login -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVolverLogin"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_volver_login"
+            android:textColor="@color/primario"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</ScrollView>

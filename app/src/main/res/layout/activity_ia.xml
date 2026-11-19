@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/fondo_pantalla">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Encabezado con Icono de IA y Título -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/imgIconoIA"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:src="@drawable/ic_ai_sparkle"
+                android:contentDescription="@string/cd_icono_ia" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtTituloIA"
+                    style="@style/EstiloTituloPantalla"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/titulo_ia" />
+
+                <TextView
+                    android:id="@+id/txtSubtituloIA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/subtitulo_ia"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Tarjeta de Entrada: Lo que escribe la persona (Requisito Rúbrica ES1) -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/EstiloTarjetaGym"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/txtEtiquetaPromptIA"
+                    style="@style/EstiloEtiquetaCampo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:text="@string/etiqueta_prompt_ia" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtPromptIA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:hint="@string/hint_prompt_ia"
+                        android:inputType="textMultiLine"
+                        android:lines="3"
+                        android:textColor="@color/texto_primario"
+                        android:textSize="14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Botón que pregunta (Requisito Rúbrica ES1) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPreguntarIA"
+                    style="@style/EstiloBotonGym"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_preguntar_ia" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tarjeta del Área de Respuesta con Texto de Ejemplo (Requisito Rúbrica ES1) -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/EstiloTarjetaGym"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/fondo_ia">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgSparkleRespuesta"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_ai_sparkle"
+                        android:contentDescription="@string/cd_icono_ia" />
+
+                    <TextView
+                        android:id="@+id/txtEtiquetaRespuestaIA"
+                        style="@style/EstiloEtiquetaCampo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/etiqueta_respuesta_ia"
+                        android:textColor="@color/primario" />
+                </LinearLayout>
+
+                <!-- Área de respuesta con texto de ejemplo (Requisito Rúbrica ES1) -->
+                <TextView
+                    android:id="@+id/txtRespuestaIA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/respuesta_ia_ejemplo"
+                    android:textColor="@color/texto_primario"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón Volver -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnVolverDeIA"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/btn_volver_de_ia"
+            android:textColor="@color/texto_secundario" />
+
+    </LinearLayout>
+</ScrollView>
