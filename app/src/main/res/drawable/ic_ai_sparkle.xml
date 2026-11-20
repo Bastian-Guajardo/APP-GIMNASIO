@@ -3,7 +3,23 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+
+    <!-- Destello principal de IA (Grande - Color Primario) -->
     <path
+        android:name="sparkle_principal"
         android:fillColor="@color/primario"
-        android:pathData="M19,9L20.25,6.25L23,5L20.25,3.75L19,1L17.75,3.75L15,5L17.75,6.25L19,9M9,11L11.25,6.5L15.75,4.25L11.25,2L9,6.5L6.75,2L4.5,6.5L9,11M11.5,9.5L9,14.5L6.5,9.5L1.5,7L6.5,4.5L9,9.5L11.5,4.5L16.5,7L11.5,9.5M19,15L17.75,17.75L15,19L17.75,20.25L19,23L20.25,20.25L23,19L20.25,17.75L19,15Z" />
+        android:pathData="M 10,3 Q 10,11 18,11 Q 10,11 10,19 Q 10,11 2,11 Q 10,11 10,3 Z" />
+
+    <!-- Destello secundario de IA (Superior derecho - Color Acento) -->
+    <path
+        android:name="sparkle_secundario"
+        android:fillColor="@color/color_acento"
+        android:pathData="M 18,1 Q 18,5 22,5 Q 18,5 18,9 Q 18,5 14,5 Q 18,5 18,1 Z" />
+
+    <!-- Destello pequeño de IA (Inferior derecho - Color Primario Claro) -->
+    <path
+        android:name="sparkle_terciario"
+        android:fillColor="@color/primario_claro"
+        android:pathData="M 18.5,14.5 Q 18.5,17 21,17 Q 18.5,17 18.5,19.5 Q 18.5,17 16,17 Q 18.5,17 18.5,14.5 Z" />
+
 </vector>
